@@ -7,40 +7,45 @@ public class Calculator {
         Scanner sc = new Scanner(System.in);
         // terminates when user press X or x
         while (true) {
-            System.out.println("Enter the operator symbol : ");
+            System.out.println("Enter the operation with two numbers: ");
+            // example  54 + 56  with spaces
+            int num1 = sc.nextInt();
             char op = sc.next().charAt(0);
-            // taking operator
+            int num2 = sc.nextInt();
             if (op == '+' || op == '-' || op == '*' || op == '/' || op == '%') {
-                System.out.println("Enter two numbers");
-                int num1 = sc.nextInt();
-                int num2 = sc.nextInt();
-                switch (op) {
-                    case '+':
-                        System.out.println(num1 + num2);
-                        break;
-                    case '-':
-                        System.out.println(num1 - num2);
-                        break;
-                    case '*':
-                        System.out.println(num1 * num2);
-                        break;
-                    case '/':
-                        if (num2 != 0) {
-                            System.out.println(num1 / num2);
-                        } else {
-                            System.out.println("invalid!!");
-                        }
-                        break;
-                    case '%':
-                        System.out.println(num1 % num2);
-                        break;
-                    default:
-                        break;
+               switch (op) {
+                   case '+':
+                       System.out.println(num1 + num2);
+                       break;
+                   case '-':
+                       System.out.println(num1 - num2);
+                       break;
+                   case '*':
+                       System.out.println(num1 * num2);
+                       break;
+                   case '/':
+                       if (num2 != 0) {
+                           System.out.println(num1 / num2);
+                       } else {
+                           System.out.println("Division by 0 is not defined !");
+                       }
+                       break;
+                   case '%':
+                       System.out.println(num1 % num2);
+                       break;
+                   default:
+               }
                 }
-            } else if (op == 'x' || op == 'X') {
-                break;
-            } else {
+             else {
                 System.out.println("Invalid operation!!!");
+            }
+            System.out.println();
+            System.out.println("Press x to exit ");
+            System.out.println("Press any other key to run again");
+            char key = sc.next().charAt(0);
+            if(key=='x' || key=='X')
+            {
+                break;
             }
 
         }
