@@ -7,7 +7,7 @@ public class LL
     private int size;
     public LL()
     {
-        this.size=0; //self initialised by constructor during oject creation
+        this.size=0; //self initialised by constructor during object creation
     }
 
     public void insertAtBeginning(int val)
@@ -164,6 +164,7 @@ public class LL
         list.delete(1);
         list.insert(3,1);
         list.display();
+        list.find(2);
     }
 
 }
